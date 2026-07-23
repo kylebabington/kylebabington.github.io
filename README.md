@@ -14,11 +14,10 @@ Then visit the URL shown in the terminal.
 
 ## Contact form
 
-The contact form posts to Formspree. In `index.html`, replace `YOUR_FORM_ID` in the form `action` with your Formspree form ID.
+The contact form posts to Formspree (`https://formspree.io/f/xzdnjzej`) via AJAX from `js/personalPortfolio.js`.
 
-## GitHub Pages (after review)
+## GitHub Pages
 
-1. Create a public repo named `kylebabington.github.io`
-2. Push this folder’s contents to `main`
-3. In repo Settings → Pages, set Source to Deploy from branch: `main` / `/ (root)`
-4. Site will be at `https://kylebabington.github.io`
+Live site: **https://kylebabington.github.io**
+
+Repo: `kylebabington/kylebabington.github.io` — Pages deploys from `main` / `/ (root)`.

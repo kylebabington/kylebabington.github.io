@@ -210,13 +210,6 @@ function showFormMessage(message, type) {
     }
 
     const action = form.getAttribute('action') || '';
-    if (action.includes('YOUR_FORM_ID')) {
-      showFormMessage(
-        'Contact form is almost ready — replace YOUR_FORM_ID in index.html with your Formspree form ID.',
-        'error'
-      );
-      return;
-    }
 
     if (submitButton) {
       submitButton.disabled = true;
