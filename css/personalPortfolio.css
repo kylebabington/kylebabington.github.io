@@ -424,11 +424,6 @@ a:hover {
 .project-card__media--garden {
   background: linear-gradient(135deg, #1b5c55, #2a9d8f);
 }
-.project-card__media--garden img {
-  object-fit: cover;
-  opacity: 0.85;
-  mix-blend-mode: luminosity;
-}
 .project-card__media--placeholder {
   background:
     repeating-linear-gradient(
