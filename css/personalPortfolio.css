@@ -429,6 +429,20 @@ a:hover {
   opacity: 0.85;
   mix-blend-mode: luminosity;
 }
+.project-card__media--placeholder {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.04) 8px,
+      rgba(255, 255, 255, 0.04) 16px
+    ),
+    linear-gradient(135deg, #132e36, #1b3e46);
+}
+.project-card--placeholder {
+  opacity: 0.85;
+}
 .project-card__body {
   padding: 1rem;
 }
