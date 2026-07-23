@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kyle Babington · Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Kyle Babington — human-centered developer building accessible, empathetic tech for families, homes, and care."
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Raleway:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/personalPortfolio.css" />
+    <script src="js/personalPortfolio.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="navBar" aria-label="Primary">
+        <a class="brand" href="#main">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__text">Kyle Babington</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="nav-overlay" aria-hidden="true"></div>
+        <ul class="nav__links" id="nav-menu" aria-expanded="false">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#values">Values</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <p class="hero__brand">Kyle Babington</p>
+          <h1 id="hero-title">Human-centered developer</h1>
+          <p class="hero__tagline">
+            Curious, hands-on, and building tech that makes life easier and more
+            accessible — for families, homes, and care.
+          </p>
+          <div class="hero__cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn btn--ghost" href="#contact">Work with me</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title">About</h2>
+          <p>
+            I’m a hands-on, visual learner who loves building things that make
+            life simpler and more accessible. Curiosity drives me — whether I’m
+            exploring the wilderness or experimenting with new tech, I’m always
+            looking for smarter, kinder ways to connect people with the world
+            around them.
+          </p>
+          <p>
+            I believe technology should serve everyone. My work mixes practical
+            tinkering with empathy — shipping full-stack tools that help people
+            navigate family life, home care, and health with more clarity.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="container">
+          <h2 id="skills-title">Skills</h2>
+          <div class="skills-grid">
+            <article class="card" aria-labelledby="soft-skills-title">
+              <h3 id="soft-skills-title">Soft Skills</h3>
+              <ul class="list">
+                <li>Empathy &amp; clear communication</li>
+                <li>Emotional intelligence &amp; understanding people</li>
+                <li>Collaboration &amp; adaptability</li>
+                <li>Creative problem-solving</li>
+                <li>Leadership through mutual respect</li>
+                <li>Community-focused thinking</li>
+              </ul>
+            </article>
+
+            <article class="card" aria-labelledby="tech-skills-title">
+              <h3 id="tech-skills-title">Tech Skills</h3>
+              <ul class="list">
+                <li>React, TypeScript &amp; Vite</li>
+                <li>Node / Express &amp; FastAPI backends</li>
+                <li>Supabase / Postgres &amp; Auth</li>
+                <li>HTML, CSS &amp; accessible UI</li>
+                <li>Git &amp; GitHub workflows</li>
+              </ul>
+            </article>
+
+            <article class="card" aria-labelledby="tools-title">
+              <h3 id="tools-title">Tools</h3>
+              <ul class="list">
+                <li>VS Code &amp; Cursor</li>
+                <li>Chrome DevTools</li>
+                <li>Figma &amp; Canva</li>
+                <li>Coolors &amp; visual inspiration tools</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <h2 id="projects-title">Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <div
+                class="project-card__media project-card__media--family"
+                role="img"
+                aria-label="Family Activity Helper — colorful activity planning interface concept"
+              ></div>
+              <div class="project-card__body">
+                <h3>Family Activity Helper</h3>
+                <p>
+                  Parents set constraints; kids pick energy and style; AI suggests
+                  activities with timers and feedback for real family life.
+                </p>
+                <ul class="meta">
+                  <li>React · Vite · Express · OpenAI</li>
+                  <li>Focus: Families &amp; play</li>
+                </ul>
+                <div class="actions">
+                  <span class="btn btn--sm btn--muted" title="Live demo coming soon"
+                    >Live soon</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div
+                class="project-card__media project-card__media--houseiq"
+                role="img"
+                aria-label="HouseIQ — home memory assistant interface concept"
+              ></div>
+              <div class="project-card__body">
+                <h3>HouseIQ</h3>
+                <p>
+                  Agentic home-memory assistant: chat and uploads turn into
+                  issues, repairs, appliances, and long-term home facts.
+                </p>
+                <ul class="meta">
+                  <li>React · Express · Auth0 · OpenAI</li>
+                  <li>Focus: Home ops</li>
+                </ul>
+                <div class="actions">
+                  <a
+                    class="btn btn--sm btn--ghost"
+                    href="https://github.com/kylebabington/HouseIQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Code</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__media project-card__media--medbridge">
+                <img
+                  src="assets/projects/medbridge.png"
+                  alt="MedBridge patient companion app screenshot"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3>MedBridge</h3>
+                <p>
+                  Team residency AI patient companion — plain-language summaries,
+                  chat, and care tools. I focused on the FastAPI backend.
+                </p>
+                <ul class="meta">
+                  <li>FastAPI · Supabase · React · Groq</li>
+                  <li>Focus: Health &amp; care</li>
+                </ul>
+                <div class="actions">
+                  <a
+                    class="btn btn--sm"
+                    href="https://med-bridge-b.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live</a
+                  >
+                  <a
+                    class="btn btn--sm btn--ghost"
+                    href="https://github.com/Coding-Temple-Tech-Residency/MedBridge-B"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Code</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div
+                class="project-card__media project-card__media--garden"
+                role="img"
+                aria-label="Garden plant product imagery for online ordering project"
+              >
+                <img
+                  src="assets/projects/garden-ordering.jpg"
+                  alt=""
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3>Garden Ordering</h3>
+                <p>
+                  Online ordering for unknown inventory — customers request
+                  plants; the garden center confirms, gathers, and prepares
+                  without fake stock counts.
+                </p>
+                <ul class="meta">
+                  <li>Next.js · TypeScript · Supabase</li>
+                  <li>Focus: Honest commerce</li>
+                </ul>
+                <div class="actions">
+                  <span class="btn btn--sm btn--muted" title="Live demo coming soon"
+                    >Live soon</span
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="values" class="section" aria-labelledby="values-title">
+        <div class="container">
+          <h2 id="values-title">Values</h2>
+          <p>
+            My work is rooted in human rights, community, and mutual aid. I care
+            about accessibility — both digital and physical — and I believe that
+            good design should empower everyone, regardless of ability or
+            background.
+          </p>
+          <p>
+            I’m guided by curiosity, empathy, and the belief that small creative
+            acts can ripple outward to make the world fairer and more joyful.
+            Whether in code, conversation, or collaboration, I try to bring a
+            sense of inclusion and wonder to everything I do.
+          </p>
+          <ul class="pill-list" role="list">
+            <li class="pill">Accessibility</li>
+            <li class="pill">Community</li>
+            <li class="pill">Mutual Aid</li>
+            <li class="pill">Curiosity</li>
+            <li class="pill">Sustainability</li>
+            <li class="pill">Empathy</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title">Contact</h2>
+          <!-- Replace YOUR_FORM_ID with your Formspree form ID to enable sending -->
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            aria-describedby="contact-help"
+          >
+            <p id="contact-help" class="form-help">
+              Get in touch — I’d love to hear from you.
+            </p>
+            <label class="form-field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="form-field">
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container site-footer__inner">
+        <p>
+          © <span id="year">2026</span> Kyle Babington · Built with accessibility
+          and care.
+        </p>
+        <p class="site-footer__links">
+          <a
+            href="https://github.com/kylebabington"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
