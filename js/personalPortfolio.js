@@ -371,5 +371,30 @@ document.addEventListener('DOMContentLoaded', () => {
         show(index + 1);
       }
     });
+
+    // Swipe support for touch devices
+    let touchStartX = 0;
+    let touchStartY = 0;
+    carousel.addEventListener(
+      'touchstart',
+      (e) => {
+        const touch = e.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      },
+      { passive: true }
+    );
+    carousel.addEventListener(
+      'touchend',
+      (e) => {
+        const touch = e.changedTouches[0];
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) show(index + 1);
+        else show(index - 1);
+      },
+      { passive: true }
+    );
   });
 })();
