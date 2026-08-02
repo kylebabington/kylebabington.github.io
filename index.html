@@ -127,17 +127,76 @@
           <h2 id="projects-title">Projects</h2>
           <div class="projects-grid">
             <article class="project-card">
-              <div class="project-card__media project-card__media--family">
-                <img
-                  src="assets/projects/family-activity-helper.webp"
-                  alt="Family Activity Helper kid mode activity planning UI"
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                />
+              <div
+                class="project-card__media project-card__media--family"
+                data-carousel
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="FamilyFlow screenshots"
+              >
+                <div class="carousel">
+                  <div class="carousel__viewport">
+                    <div class="carousel__slide is-active">
+                      <img
+                        src="assets/projects/family-activity-helper-1.webp"
+                        alt="FamilyFlow kid mode activity planning UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/family-activity-helper-2.webp"
+                        alt="FamilyFlow parent moment setup UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/family-activity-helper-3.webp"
+                        alt="FamilyFlow settings UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/family-activity-helper-4.webp"
+                        alt="FamilyFlow generated imaginative activity samples"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--prev"
+                    aria-label="Previous FamilyFlow screenshot"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--next"
+                    aria-label="Next FamilyFlow screenshot"
+                  >
+                    ›
+                  </button>
+                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
+                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 4" tabindex="-1"></button>
+                  </div>
+                </div>
               </div>
               <div class="project-card__body">
-                <h3>Family Activity Helper</h3>
+                <h3>FamilyFlow</h3>
                 <p>
                   Parents set constraints; kids pick energy and style; AI suggests
                   activities with timers and feedback for real family life.
@@ -147,22 +206,82 @@
                   <li>Focus: Families &amp; play</li>
                 </ul>
                 <div class="actions">
-                  <span class="btn btn--sm btn--muted" title="Live demo coming soon"
-                    >Live soon</span
+                  <a
+                    class="btn btn--sm"
+                    href="https://family-activity-helper-production.up.railway.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live</a
+                  >
+                  <a
+                    class="btn btn--sm btn--ghost"
+                    href="https://github.com/kylebabington/family-activity-helper"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Code</a
                   >
                 </div>
               </div>
             </article>
 
             <article class="project-card">
-              <div class="project-card__media project-card__media--houseiq">
-                <img
-                  src="assets/projects/houseiq.webp"
-                  alt="HouseIQ home memory assistant dashboard UI"
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                />
+              <div
+                class="project-card__media project-card__media--houseiq"
+                data-carousel
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="HouseIQ screenshots"
+              >
+                <div class="carousel">
+                  <div class="carousel__viewport">
+                    <div class="carousel__slide is-active">
+                      <img
+                        src="assets/projects/houseiq-1.webp"
+                        alt="HouseIQ chat assistant for home issues"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/houseiq-2.webp"
+                        alt="HouseIQ documents and upload UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/houseiq-3.webp"
+                        alt="HouseIQ open issues and repair tracking UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--prev"
+                    aria-label="Previous HouseIQ screenshot"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--next"
+                    aria-label="Next HouseIQ screenshot"
+                  >
+                    ›
+                  </button>
+                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
+                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  </div>
+                </div>
               </div>
               <div class="project-card__body">
                 <h3>HouseIQ</h3>
@@ -187,14 +306,63 @@
             </article>
 
             <article class="project-card">
-              <div class="project-card__media project-card__media--medbridge">
-                <img
-                  src="assets/projects/medbridge.png"
-                  alt="MedBridge patient companion app screenshot"
-                  width="1920"
-                  height="1080"
-                  loading="lazy"
-                />
+              <div
+                class="project-card__media project-card__media--medbridge"
+                data-carousel
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="MedBridge screenshots"
+              >
+                <div class="carousel">
+                  <div class="carousel__viewport">
+                    <div class="carousel__slide is-active">
+                      <img
+                        src="assets/projects/medbridge-1.webp"
+                        alt="MedBridge dashboard calendar UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/medbridge-2.webp"
+                        alt="MedBridge document vault upload UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/medbridge-3.webp"
+                        alt="MedBridge medical history documents UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--prev"
+                    aria-label="Previous MedBridge screenshot"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--next"
+                    aria-label="Next MedBridge screenshot"
+                  >
+                    ›
+                  </button>
+                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
+                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  </div>
+                </div>
               </div>
               <div class="project-card__body">
                 <h3>MedBridge</h3>
@@ -226,17 +394,66 @@
             </article>
 
             <article class="project-card">
-              <div class="project-card__media project-card__media--garden">
-                <img
-                  src="assets/projects/garden-ordering.webp"
-                  alt="Garden Ordering storefront homepage UI"
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                />
+              <div
+                class="project-card__media project-card__media--garden"
+                data-carousel
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="NurseryConnect screenshots"
+              >
+                <div class="carousel">
+                  <div class="carousel__viewport">
+                    <div class="carousel__slide is-active">
+                      <img
+                        src="assets/projects/garden-ordering-1.webp"
+                        alt="NurseryConnect homepage"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/garden-ordering-2.webp"
+                        alt="NurseryConnect how ordering works workflow steps"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/garden-ordering-3.webp"
+                        alt="NurseryConnect staff admin sign-in"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--prev"
+                    aria-label="Previous NurseryConnect screenshot"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel__btn carousel__btn--next"
+                    aria-label="Next NurseryConnect screenshot"
+                  >
+                    ›
+                  </button>
+                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
+                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
+                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  </div>
+                </div>
               </div>
               <div class="project-card__body">
-                <h3>Garden Ordering</h3>
+                <h3>NurseryConnect</h3>
                 <p>
                   Online ordering for unknown inventory — customers request
                   plants; the garden center confirms, gathers, and prepares
@@ -249,6 +466,13 @@
                 <div class="actions">
                   <span class="btn btn--sm btn--muted" title="Live demo coming soon"
                     >Live soon</span
+                  >
+                  <a
+                    class="btn btn--sm btn--ghost"
+                    href="https://github.com/kylebabington/mock-garden-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Code</a
                   >
                 </div>
               </div>

@@ -406,10 +406,93 @@ a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
 }
-.project-card:hover .project-card__media img {
-  transform: scale(1.04);
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.carousel__viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+.carousel__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 1;
+}
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(8, 24, 28, 0.62);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+.carousel__btn--prev {
+  left: 0.45rem;
+}
+.carousel__btn--next {
+  right: 0.45rem;
+}
+.project-card:hover .carousel__btn,
+.carousel:focus-within .carousel__btn {
+  opacity: 1;
+}
+.carousel__btn:hover,
+.carousel__btn:focus-visible {
+  background: rgba(8, 24, 28, 0.85);
+  outline: none;
+}
+.carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+.carousel__dot {
+  pointer-events: auto;
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+.carousel__dot.is-active {
+  background: rgba(255, 255, 255, 0.95);
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel__slide {
+    transition: none;
+  }
 }
 .project-card__media--family {
   background:
@@ -421,8 +504,14 @@ a:hover {
     radial-gradient(circle at 70% 30%, rgba(42, 157, 143, 0.5), transparent 50%),
     linear-gradient(160deg, #132e36, #685369);
 }
+.project-card__media--houseiq img {
+  object-position: center center;
+}
 .project-card__media--garden {
   background: linear-gradient(135deg, #1b5c55, #2a9d8f);
+}
+.project-card__media--medbridge {
+  background: linear-gradient(160deg, #132e4a, #2a6f9d);
 }
 .project-card__media--placeholder {
   background:
