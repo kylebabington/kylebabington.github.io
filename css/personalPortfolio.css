@@ -360,7 +360,11 @@ a:hover {
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+.skills-grid .card {
+  padding: 1.35rem 1.4rem 1.5rem;
+  min-height: 100%;
 }
 .card {
   background: var(--card);
@@ -368,6 +372,10 @@ a:hover {
   border-radius: var(--radius);
   padding: 1rem;
   box-shadow: var(--shadow);
+}
+.skills-grid .list {
+  display: grid;
+  gap: 0.35rem;
 }
 .list {
   margin: 0;
@@ -636,6 +644,11 @@ button:focus {
 @media (min-width: 720px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+    align-items: stretch;
+  }
+  .skills-grid .card {
+    padding: 1.5rem 1.45rem 1.65rem;
   }
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
