@@ -23,11 +23,15 @@
   const clocks = document.querySelectorAll('[data-live-clock]');
   function updateClock() {
     const now = new Date();
-    const formatted = new Intl.DateTimeFormat('en-US', {
+    const formatter = new Intl.DateTimeFormat('en-US', {
       timeZone: 'America/Indiana/Indianapolis',
       hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
-    }).format(now);
-    clocks.forEach((clock) => { clock.textContent = `${formatted} EDT`; });
+      timeZoneName: 'short',
+    });
+    const parts = formatter.formatToParts(now);
+    const time = parts.filter((part) => ['hour', 'minute', 'second'].includes(part.type)).map((part) => part.value).join(':');
+    const zone = parts.find((part) => part.type === 'timeZoneName')?.value || 'ET';
+    clocks.forEach((clock) => { clock.textContent = `${time} ${zone}`; });
   }
   updateClock();
   setInterval(updateClock, 1000);
@@ -73,5 +77,10 @@
 
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = String(new Date().getFullYear());
+  });
+
+  // Compatibility with the current portfolio asset organization.
+  document.querySelectorAll('img[src="assets/projects/nurseryconnect/01-home.webp"]').forEach((img) => {
+    img.src = 'assets/projects/garden/01-home.webp';
   });
 })();
