@@ -4,6 +4,9 @@ const prefersReducedMotion = window.matchMedia(
   '(prefers-reduced-motion: reduce)'
 ).matches;
 
+const isStatsPage = document.body.dataset.page === 'stats';
+const homePrefix = isStatsPage ? '../' : '';
+
 // Update copyright year dynamically
 (function updateYear() {
   const yearElement = document.getElementById('year');
@@ -12,7 +15,7 @@ const prefersReducedMotion = window.matchMedia(
   }
 })();
 
-// Smooth scrolling for anchor links
+// Smooth scrolling for same-page anchor links
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
@@ -47,34 +50,43 @@ function updateActiveNav(hash = null) {
     link.removeAttribute('aria-current');
   });
 
+  if (isStatsPage) {
+    const statsLink = document.querySelector('.nav__links a[href="./"]');
+    if (statsLink) {
+      statsLink.setAttribute('aria-current', 'page');
+    }
+    return;
+  }
+
   if (hash) {
     const activeLink = document.querySelector(`.nav__links a[href="${hash}"]`);
     if (activeLink) {
       activeLink.setAttribute('aria-current', 'page');
     }
-  } else {
-    let currentSection = '';
-    const scrollPosition = window.scrollY + 100;
+    return;
+  }
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+  let currentSection = '';
+  const scrollPosition = window.scrollY + 100;
 
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
 
-    if (currentSection) {
-      const activeLink = document.querySelector(
-        `.nav__links a[href="#${currentSection}"]`
-      );
-      if (activeLink) {
-        activeLink.setAttribute('aria-current', 'page');
-      }
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  if (currentSection) {
+    const activeLink = document.querySelector(
+      `.nav__links a[href="#${currentSection}"]`
+    );
+    if (activeLink) {
+      activeLink.setAttribute('aria-current', 'page');
     }
   }
 }
@@ -444,4 +456,283 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   elements.forEach((el) => observer.observe(el));
+})();
+
+// ======= Indianapolis clock =======
+(function initIndyClock() {
+  const roots = document.querySelectorAll('[data-indy-clock]');
+  if (!roots.length) return;
+
+  const timeFmt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Indiana/Indianapolis',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  });
+
+  function tick() {
+    const time = timeFmt.format(new Date());
+    roots.forEach((root) => {
+      const timeEl = root.querySelector('[data-indy-clock-time]');
+      if (timeEl) timeEl.textContent = time;
+    });
+  }
+
+  tick();
+  setInterval(tick, 30_000);
+})();
+
+// ======= Theme toggle (dark / light / system) =======
+(function initThemeToggle() {
+  const THEME_KEY = 'kb-theme';
+  const order = ['dark', 'light', 'system'];
+  const icons = { dark: '☾', light: '☀', system: '◐' };
+  const labels = {
+    dark: 'Theme: dark. Click for light.',
+    light: 'Theme: light. Click for system.',
+    system: 'Theme: system. Click for dark.',
+  };
+
+  function getStored() {
+    try {
+      const value = localStorage.getItem(THEME_KEY);
+      if (value === 'light' || value === 'dark' || value === 'system') {
+        return value;
+      }
+    } catch {
+      /* ignore */
+    }
+    return 'dark';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      /* ignore */
+    }
+    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+      const icon = btn.querySelector('[data-theme-icon]');
+      if (icon) icon.textContent = icons[theme];
+      btn.setAttribute('aria-label', labels[theme]);
+      btn.title = `Theme: ${theme}`;
+    });
+  }
+
+  applyTheme(getStored());
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const current = getStored();
+      const next = order[(order.indexOf(current) + 1) % order.length];
+      applyTheme(next);
+    });
+  });
+})();
+
+// ======= Command palette =======
+(function initCommandPalette() {
+  const root = document.querySelector('[data-command-palette]');
+  if (!root) return;
+
+  const input = root.querySelector('[data-command-palette-input]');
+  const list = root.querySelector('[data-command-palette-list]');
+  const openButtons = document.querySelectorAll('[data-command-palette-open]');
+  let activeIndex = 0;
+  let filtered = [];
+  let lastFocus = null;
+
+  const commands = [
+    {
+      id: 'projects',
+      label: 'Projects',
+      keywords: 'work portfolio',
+      href: `${homePrefix}#projects`,
+    },
+    {
+      id: 'story',
+      label: 'How I build',
+      keywords: 'familyflow case study',
+      href: `${homePrefix}#story`,
+    },
+    {
+      id: 'about',
+      label: 'About',
+      keywords: 'bio',
+      href: `${homePrefix}#about`,
+    },
+    {
+      id: 'contact',
+      label: 'Contact Kyle',
+      keywords: 'email message hire',
+      href: `${homePrefix}#contact`,
+    },
+    {
+      id: 'stats',
+      label: 'Developer Stats',
+      keywords: 'github activity graph',
+      href: isStatsPage ? './' : 'stats/',
+    },
+    {
+      id: 'familyflow',
+      label: 'View FamilyFlow',
+      keywords: 'project',
+      href: `${homePrefix}#projects`,
+    },
+    {
+      id: 'houseiq',
+      label: 'View HouseIQ',
+      keywords: 'project',
+      href: `${homePrefix}#projects`,
+    },
+    {
+      id: 'medbridge',
+      label: 'View MedBridge',
+      keywords: 'project',
+      href: `${homePrefix}#projects`,
+    },
+    {
+      id: 'nursery',
+      label: 'View NurseryConnect',
+      keywords: 'project garden',
+      href: `${homePrefix}#projects`,
+    },
+    {
+      id: 'github',
+      label: 'GitHub',
+      keywords: 'code repos',
+      href: 'https://github.com/kylebabington',
+      external: true,
+    },
+    {
+      id: 'linkedin',
+      label: 'LinkedIn',
+      keywords: 'social',
+      href: 'https://www.linkedin.com/in/kyle-babington',
+      external: true,
+    },
+  ];
+
+  function isOpen() {
+    return !root.hasAttribute('hidden');
+  }
+
+  function renderList(query) {
+    const q = query.trim().toLowerCase();
+    filtered = commands.filter((cmd) => {
+      if (!q) return true;
+      return (
+        cmd.label.toLowerCase().includes(q) ||
+        (cmd.keywords && cmd.keywords.includes(q))
+      );
+    });
+    activeIndex = 0;
+    list.replaceChildren();
+
+    if (!filtered.length) {
+      const empty = document.createElement('li');
+      empty.className = 'command-palette__empty';
+      empty.textContent = 'No matches';
+      list.appendChild(empty);
+      return;
+    }
+
+    filtered.forEach((cmd, index) => {
+      const li = document.createElement('li');
+      li.className = 'command-palette__item';
+      li.setAttribute('role', 'option');
+      li.setAttribute('id', `command-option-${cmd.id}`);
+      li.dataset.index = String(index);
+      if (index === 0) li.setAttribute('aria-selected', 'true');
+      li.innerHTML = `<span class="command-palette__item-label"></span>`;
+      li.querySelector('.command-palette__item-label').textContent = cmd.label;
+      li.addEventListener('click', () => runCommand(cmd));
+      list.appendChild(li);
+    });
+  }
+
+  function setActive(index) {
+    const items = list.querySelectorAll('.command-palette__item');
+    if (!items.length) return;
+    activeIndex = (index + items.length) % items.length;
+    items.forEach((item, i) => {
+      item.setAttribute('aria-selected', String(i === activeIndex));
+      if (i === activeIndex) {
+        item.scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
+  function runCommand(cmd) {
+    closePalette();
+    if (cmd.external) {
+      window.open(cmd.href, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    window.location.href = cmd.href;
+  }
+
+  function openPalette() {
+    if (isOpen()) return;
+    lastFocus = document.activeElement;
+    root.removeAttribute('hidden');
+    document.body.classList.add('palette-open');
+    renderList('');
+    input.value = '';
+    input.focus();
+  }
+
+  function closePalette() {
+    if (!isOpen()) return;
+    root.setAttribute('hidden', '');
+    document.body.classList.remove('palette-open');
+    if (lastFocus && typeof lastFocus.focus === 'function') {
+      lastFocus.focus();
+    }
+  }
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener('click', openPalette);
+  });
+
+  root.querySelectorAll('[data-command-palette-close]').forEach((el) => {
+    el.addEventListener('click', closePalette);
+  });
+
+  input.addEventListener('input', () => {
+    renderList(input.value);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActive(activeIndex + 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActive(activeIndex - 1);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (filtered[activeIndex]) runCommand(filtered[activeIndex]);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      closePalette();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (isOpen()) closePalette();
+      else openPalette();
+    } else if (e.key === 'Escape' && isOpen()) {
+      closePalette();
+    }
+  });
+
+  // Show Ctrl vs ⌘ based on platform
+  const isApple = /Mac|iPhone|iPad|iPod/i.test(navigator.platform);
+  document.querySelectorAll('.nav-util__kbd').forEach((kbd) => {
+    kbd.textContent = isApple ? '⌘K' : 'Ctrl K';
+  });
 })();

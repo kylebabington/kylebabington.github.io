@@ -40,10 +40,24 @@
       rel="stylesheet"
     />
 
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('kb-theme');
+          var theme =
+            stored === 'light' || stored === 'dark' || stored === 'system'
+              ? stored
+              : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="css/personalPortfolio.css" />
     <script src="js/personalPortfolio.js" defer></script>
   </head>
-  <body>
+  <body data-page="home">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" role="banner">
@@ -67,8 +81,41 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#story">How I build</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="stats/">Stats</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <div class="nav__utils" aria-label="Site utilities">
+          <button
+            type="button"
+            class="nav-util nav-util--palette"
+            data-command-palette-open
+            aria-label="Open command palette"
+            title="Command palette (Ctrl+K)"
+          >
+            <kbd class="nav-util__kbd">⌘K</kbd>
+          </button>
+          <p class="nav-clock" data-indy-clock aria-live="off">
+            <span class="nav-clock__dot" aria-hidden="true"></span>
+            <span data-indy-clock-label>Indianapolis</span>
+            <span data-indy-clock-time>—:—</span>
+          </p>
+          <button
+            type="button"
+            class="nav-util nav-util--theme"
+            data-theme-toggle
+            aria-label="Theme: dark. Click to change."
+          >
+            <span data-theme-icon aria-hidden="true">☾</span>
+          </button>
+          <a
+            class="nav-util nav-util--link"
+            href="https://github.com/kylebabington"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
       </nav>
     </header>
 
@@ -612,10 +659,6 @@
         </div>
       </section>
 
-      <!--
-        About photo: replace assets/about/portrait-or-trail.svg with your
-        own photo as portrait-or-trail.jpg (or .webp) and update the src below.
-      -->
       <section id="about" class="section" aria-labelledby="about-title">
         <div class="container about">
           <div class="about__copy reveal">
@@ -635,14 +678,16 @@
               into code, conversation, and collaboration.
             </p>
             <p class="about__stack">
-              React · TypeScript · Next.js · Node · FastAPI · Postgres ·
-              Supabase · accessible UI
+              React · TypeScript · Next.js · Node · Express · FastAPI ·
+              Postgres · Supabase · CockroachDB · Auth0 · AWS S3 · OpenAI ·
+              Groq · Playwright · Docker · GitHub Actions · CI/CD · Stripe ·
+              OpenAPI · accessible UI · Cursor · Vercel · Railway · Resend
             </p>
           </div>
           <figure class="about__figure reveal">
             <img
-              src="assets/about/portrait-or-trail.svg"
-              alt="Placeholder for a trail or portrait photo of Kyle"
+              src="assets/about/portrait-or-trail.jpg"
+              alt="Kyle Babington outdoors under a blue sky"
               width="960"
               height="1200"
               loading="lazy"
@@ -735,6 +780,8 @@
           and care.
         </p>
         <p class="site-footer__links">
+          <a href="stats/">Stats</a>
+          ·
           <a
             href="https://github.com/kylebabington"
             target="_blank"
@@ -744,5 +791,37 @@
         </p>
       </div>
     </footer>
+
+    <div
+      class="command-palette"
+      data-command-palette
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="command-palette-title"
+    >
+      <div class="command-palette__backdrop" data-command-palette-close></div>
+      <div class="command-palette__panel">
+        <h2 id="command-palette-title" class="visually-hidden">
+          Command palette
+        </h2>
+        <label class="visually-hidden" for="command-palette-input"
+          >Search portfolio</label
+        >
+        <input
+          id="command-palette-input"
+          class="command-palette__input"
+          type="search"
+          placeholder="Search portfolio…"
+          autocomplete="off"
+          data-command-palette-input
+        />
+        <ul
+          class="command-palette__list"
+          role="listbox"
+          data-command-palette-list
+        ></ul>
+      </div>
+    </div>
   </body>
 </html>

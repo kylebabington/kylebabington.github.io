@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developer Stats · Kyle Babington</title>
+    <meta
+      name="description"
+      content="A snapshot of what Kyle Babington is building and shipping — GitHub activity, repositories, and current focus."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Developer Stats · Kyle Babington" />
+    <meta
+      property="og:description"
+      content="GitHub activity, repositories, and current focus."
+    />
+    <meta
+      property="og:image"
+      content="https://kylebabington.github.io/assets/og-image.svg"
+    />
+    <meta property="og:url" content="https://kylebabington.github.io/stats/" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Raleway:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('kb-theme');
+          var theme =
+            stored === 'light' || stored === 'dark' || stored === 'system'
+              ? stored
+              : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../css/personalPortfolio.css" />
+    <script src="../js/personalPortfolio.js" defer></script>
+    <script src="../js/stats.js" defer></script>
+  </head>
+  <body data-page="stats">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="navBar" aria-label="Primary">
+        <a class="brand" href="../">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__text">Kyle Babington</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="nav-overlay" aria-hidden="true"></div>
+        <ul class="nav__links" id="nav-menu">
+          <li><a href="../#projects">Projects</a></li>
+          <li><a href="../#story">How I build</a></li>
+          <li><a href="../#about">About</a></li>
+          <li><a href="./" aria-current="page">Stats</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav__utils" aria-label="Site utilities">
+          <button
+            type="button"
+            class="nav-util nav-util--palette"
+            data-command-palette-open
+            aria-label="Open command palette"
+            title="Command palette (Ctrl+K)"
+          >
+            <kbd class="nav-util__kbd">⌘K</kbd>
+          </button>
+          <p class="nav-clock" data-indy-clock aria-live="off">
+            <span class="nav-clock__dot" aria-hidden="true"></span>
+            <span data-indy-clock-label>Indianapolis</span>
+            <span data-indy-clock-time>—:—</span>
+          </p>
+          <button
+            type="button"
+            class="nav-util nav-util--theme"
+            data-theme-toggle
+            aria-label="Theme: dark. Click to change."
+          >
+            <span data-theme-icon aria-hidden="true">☾</span>
+          </button>
+          <a
+            class="nav-util nav-util--link"
+            href="https://github.com/kylebabington"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="section stats-hero" aria-labelledby="stats-title">
+        <div class="container">
+          <h1 id="stats-title" class="reveal">Developer Stats</h1>
+          <p class="stats-intro reveal">
+            A snapshot of what I’m building and shipping.
+          </p>
+          <p id="stats-updated" class="stats-updated reveal"></p>
+          <p
+            id="stats-status"
+            class="stats-status"
+            role="status"
+            hidden
+          ></p>
+        </div>
+      </section>
+
+      <section
+        class="section section--stats"
+        aria-labelledby="activity-title"
+      >
+        <div class="container">
+          <h2 id="activity-title" class="reveal">GitHub activity</h2>
+          <div id="stats-graph" class="stats-graph reveal"></div>
+          <div id="stats-metrics" class="stats-metrics reveal"></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="repos-title">
+        <div class="container">
+          <h2 id="repos-title" class="reveal">Recent repositories</h2>
+          <div id="stats-repos" class="reveal"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container site-footer__inner">
+        <p>
+          © <span id="year">2026</span> Kyle Babington · Built with accessibility
+          and care.
+        </p>
+        <p class="site-footer__links">
+          <a href="../">Home</a>
+          ·
+          <a
+            href="https://github.com/kylebabington"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <div
+      class="command-palette"
+      data-command-palette
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="command-palette-title"
+    >
+      <div class="command-palette__backdrop" data-command-palette-close></div>
+      <div class="command-palette__panel">
+        <h2 id="command-palette-title" class="visually-hidden">
+          Command palette
+        </h2>
+        <label class="visually-hidden" for="command-palette-input"
+          >Search portfolio</label
+        >
+        <input
+          id="command-palette-input"
+          class="command-palette__input"
+          type="search"
+          placeholder="Search portfolio…"
+          autocomplete="off"
+          data-command-palette-input
+        />
+        <ul
+          class="command-palette__list"
+          role="listbox"
+          data-command-palette-list
+        ></ul>
+      </div>
+    </div>
+  </body>
+</html>
