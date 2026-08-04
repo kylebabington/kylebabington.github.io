@@ -120,8 +120,12 @@ function validateField(field) {
   const value = field.value.trim();
   let isValid = true;
   let errorMessage = '';
+  const errorId = `${field.id || field.name}-error`;
 
   field.classList.remove('error');
+  field.removeAttribute('aria-invalid');
+  field.removeAttribute('aria-describedby');
+
   const existingError = field.parentElement.querySelector('.error-message');
   if (existingError) {
     existingError.remove();
@@ -140,8 +144,13 @@ function validateField(field) {
 
   if (!isValid) {
     field.classList.add('error');
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', errorId);
+
     const errorElement = document.createElement('span');
     errorElement.className = 'error-message';
+    errorElement.id = errorId;
+    errorElement.setAttribute('role', 'alert');
     errorElement.textContent = errorMessage;
     field.parentElement.appendChild(errorElement);
   }
@@ -161,9 +170,8 @@ function showFormMessage(message, type) {
   messageElement.textContent = message;
 
   const form = document.querySelector('.contact-form');
-  const helpText = document.getElementById('contact-help');
-  if (form && helpText) {
-    form.insertBefore(messageElement, helpText.nextSibling);
+  if (form) {
+    form.insertBefore(messageElement, form.firstChild);
 
     setTimeout(() => {
       messageElement.remove();
@@ -186,6 +194,8 @@ function showFormMessage(message, type) {
     input.addEventListener('input', function () {
       if (this.classList.contains('error')) {
         this.classList.remove('error');
+        this.removeAttribute('aria-invalid');
+        this.removeAttribute('aria-describedby');
         const errorMsg = this.parentElement.querySelector('.error-message');
         if (errorMsg) {
           errorMsg.remove();
@@ -206,6 +216,8 @@ function showFormMessage(message, type) {
 
     if (!isValid) {
       showFormMessage('Please correct the errors above.', 'error');
+      const firstInvalid = form.querySelector('[aria-invalid="true"]');
+      firstInvalid?.focus();
       return;
     }
 
@@ -227,13 +239,13 @@ function showFormMessage(message, type) {
         form.reset();
       } else {
         showFormMessage(
-          'Something went wrong sending your message. Please try again or reach out on GitHub.',
+          'Something went wrong sending your message. Please try again or email me directly.',
           'error'
         );
       }
     } catch {
       showFormMessage(
-        'Unable to send right now. Please try again or reach out on GitHub.',
+        'Unable to send right now. Please try again or email me directly.',
         'error'
       );
     } finally {
@@ -249,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hash) {
     updateActiveNav(hash);
   } else {
-    updateActiveNav('#about');
+    updateActiveNav();
   }
 });
 
@@ -260,17 +272,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!navToggle || !navMenu) return;
 
+  function closeMenu() {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('is-open');
+    if (navOverlay) {
+      navOverlay.classList.remove('visible');
+      navOverlay.setAttribute('aria-hidden', 'true');
+    }
+    document.body.style.overflow = '';
+    navToggle.focus();
+  }
+
+  function openMenu() {
+    navToggle.setAttribute('aria-expanded', 'true');
+    navMenu.classList.add('is-open');
+    if (navOverlay) {
+      navOverlay.classList.add('visible');
+      navOverlay.setAttribute('aria-hidden', 'false');
+    }
+    document.body.style.overflow = 'hidden';
+    const firstLink = navMenu.querySelector('a');
+    firstLink?.focus();
+  }
+
   function toggleMenu() {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!isExpanded));
-    navMenu.setAttribute('aria-expanded', String(!isExpanded));
-
-    if (navOverlay) {
-      navOverlay.classList.toggle('visible');
-      navOverlay.setAttribute('aria-hidden', String(isExpanded));
-    }
-
-    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    if (isExpanded) closeMenu();
+    else openMenu();
   }
 
   navToggle.addEventListener('click', toggleMenu);
@@ -278,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navOverlay) {
     navOverlay.addEventListener('click', () => {
       if (navToggle.getAttribute('aria-expanded') === 'true') {
-        toggleMenu();
+        closeMenu();
       }
     });
   }
@@ -289,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.innerWidth <= 719 &&
         navToggle.getAttribute('aria-expanded') === 'true'
       ) {
-        toggleMenu();
+        closeMenu();
       }
     });
   });
@@ -299,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.key === 'Escape' &&
       navToggle.getAttribute('aria-expanded') === 'true'
     ) {
-      toggleMenu();
+      closeMenu();
     }
   });
 })();
@@ -308,14 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const carousels = document.querySelectorAll('[data-carousel]');
 
   carousels.forEach((carousel) => {
-    const slides = Array.from(
-      carousel.querySelectorAll('.carousel__slide')
-    );
+    const slides = Array.from(carousel.querySelectorAll('.carousel__slide'));
     const prevBtn = carousel.querySelector('.carousel__btn--prev');
     const nextBtn = carousel.querySelector('.carousel__btn--next');
-    const dots = Array.from(
-      carousel.querySelectorAll('.carousel__dot')
-    );
+    const dots = Array.from(carousel.querySelectorAll('.carousel__dot'));
 
     if (slides.length < 2) return;
 
@@ -372,7 +396,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Swipe support for touch devices
     let touchStartX = 0;
     let touchStartY = 0;
     carousel.addEventListener(
@@ -397,4 +420,28 @@ document.addEventListener('DOMContentLoaded', () => {
       { passive: true }
     );
   });
+})();
+
+(function initScrollReveal() {
+  const elements = document.querySelectorAll('.reveal');
+  if (!elements.length) return;
+
+  if (prefersReducedMotion) {
+    elements.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
 })();

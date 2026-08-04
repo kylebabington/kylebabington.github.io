@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-label="Placeholder trail or portrait photo  replace with your photo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b5c55"/>
+      <stop offset="100%" stop-color="#0e3b43"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1200" fill="url(#bg)"/>
+  <path d="M0 900 Q240 820 480 880 T960 840 L960 1200 L0 1200 Z" fill="#132e36"/>
+  <circle cx="480" cy="420" r="120" fill="#2a9d8f" opacity="0.35"/>
+  <rect x="360" y="540" width="240" height="280" rx="120" fill="#2a9d8f" opacity="0.25"/>
+  <text x="480" y="980" text-anchor="middle" fill="#ada9b7" font-family="system-ui,sans-serif" font-size="22" opacity="0.8">Replace with portrait-or-trail.jpg</text>
+</svg>

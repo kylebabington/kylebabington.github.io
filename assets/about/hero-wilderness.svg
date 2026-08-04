@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Placeholder wilderness landscape  replace with your photo">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a5a63"/>
+      <stop offset="55%" stop-color="#0e3b43"/>
+      <stop offset="100%" stop-color="#0a2a30"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a9d8f"/>
+      <stop offset="100%" stop-color="#1b5c55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <ellipse cx="1480" cy="220" rx="90" ry="90" fill="#e9c46a" opacity="0.35"/>
+  <path d="M0 620 L320 420 L560 560 L820 360 L1100 540 L1400 380 L1680 520 L1920 440 L1920 1080 L0 1080 Z" fill="url(#ridge)" opacity="0.55"/>
+  <path d="M0 760 L280 620 L520 720 L780 560 L1080 700 L1380 580 L1700 690 L1920 620 L1920 1080 L0 1080 Z" fill="#132e36"/>
+  <path d="M0 880 L400 780 L700 860 L1000 760 L1400 840 L1920 780 L1920 1080 L0 1080 Z" fill="#0e3b43"/>
+  <text x="960" y="540" text-anchor="middle" fill="#ada9b7" font-family="system-ui,sans-serif" font-size="28" opacity="0.7">Replace with assets/about/hero-wilderness.jpg</text>
+</svg>

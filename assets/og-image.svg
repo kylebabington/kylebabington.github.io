@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a5a63"/>
+      <stop offset="100%" stop-color="#0e3b43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <path d="M0 380 L200 280 L400 340 L650 220 L900 320 L1200 260 L1200 630 L0 630 Z" fill="#2a9d8f" opacity="0.4"/>
+  <path d="M0 460 L300 380 L550 440 L850 360 L1200 420 L1200 630 L0 630 Z" fill="#132e36"/>
+  <text x="80" y="280" fill="#e9c46a" font-family="system-ui,sans-serif" font-size="56" font-weight="700">Kyle Babington</text>
+  <text x="80" y="350" fill="#f1f4f6" font-family="system-ui,sans-serif" font-size="32">Human-centered developer</text>
+  <text x="80" y="400" fill="#ada9b7" font-family="system-ui,sans-serif" font-size="22">From trails to tools</text>
+</svg>

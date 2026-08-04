@@ -6,8 +6,33 @@
     <title>Kyle Babington · Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Kyle Babington — human-centered developer building accessible, empathetic tech for families, homes, and care."
+      content="Portfolio of Kyle Babington — human-centered developer grounded in the outdoors, building accessible tech for families, homes, and care."
     />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kyle Babington · Portfolio" />
+    <meta
+      property="og:description"
+      content="Human-centered developer — from trails to tools. Building tech for families, homes, and care."
+    />
+    <meta
+      property="og:image"
+      content="https://kylebabington.github.io/assets/og-image.svg"
+    />
+    <meta property="og:url" content="https://kylebabington.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kyle Babington · Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Human-centered developer — from trails to tools. Building tech for families, homes, and care."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kylebabington.github.io/assets/og-image.svg"
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,11 +63,10 @@
         </button>
 
         <div class="nav-overlay" aria-hidden="true"></div>
-        <ul class="nav__links" id="nav-menu" aria-expanded="false">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
+        <ul class="nav__links" id="nav-menu">
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#values">Values</a></li>
+          <li><a href="#story">How I build</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -50,12 +74,23 @@
 
     <main id="main" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__media" aria-hidden="true">
+          <img
+            class="hero__img"
+            src="assets/about/hero-wilderness.jpg"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero__scrim" aria-hidden="true"></div>
         <div class="container hero__inner">
           <p class="hero__brand">Kyle Babington</p>
           <h1 id="hero-title">Human-centered developer</h1>
           <p class="hero__tagline">
-            Curious, hands-on, and building tech that makes life easier and more
-            accessible — for families, homes, and care.
+            From trails to tools — building tech that helps families, homes, and
+            care in real life.
           </p>
           <div class="hero__cta">
             <a class="btn" href="#projects">See Projects</a>
@@ -64,79 +99,11 @@
         </div>
       </section>
 
-      <section id="about" class="section" aria-labelledby="about-title">
-        <div class="container">
-          <h2 id="about-title">About</h2>
-          <p>
-            I’m a hands-on, visual learner who loves building things that make
-            life simpler and more accessible. Curiosity drives me — whether I’m
-            exploring the wilderness or experimenting with new tech, I’m always
-            looking for smarter, kinder ways to connect people with the world
-            around them.
-          </p>
-          <p>
-            I believe technology should serve everyone. My work mixes practical
-            tinkering with empathy — shipping full-stack tools that help people
-            navigate family life, home care, and health with more clarity.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" class="section" aria-labelledby="skills-title">
-        <div class="container">
-          <h2 id="skills-title">Skills</h2>
-          <div class="skills-grid">
-            <article class="card" aria-labelledby="soft-skills-title">
-              <h3 id="soft-skills-title">Soft Skills</h3>
-              <ul class="list">
-                <li>Empathy &amp; clear communication</li>
-                <li>Emotional intelligence &amp; understanding people</li>
-                <li>Collaboration &amp; adaptability</li>
-                <li>Creative problem-solving</li>
-                <li>Leadership through mutual respect</li>
-                <li>Community-focused thinking</li>
-                <li>Mentoring &amp; knowledge sharing</li>
-                <li>Ownership from idea to ship</li>
-              </ul>
-            </article>
-
-            <article class="card" aria-labelledby="tech-skills-title">
-              <h3 id="tech-skills-title">Tech Skills</h3>
-              <ul class="list">
-                <li>React, TypeScript &amp; Next.js</li>
-                <li>Node / Express &amp; FastAPI</li>
-                <li>CockroachDB, Postgres &amp; Supabase</li>
-                <li>AWS S3, Auth0 &amp; OpenAI / Groq</li>
-                <li>HTML, CSS &amp; accessible UI</li>
-                <li>REST APIs &amp; authentication flows</li>
-                <li>CI/CD &amp; automated testing</li>
-                <li>Git &amp; GitHub workflows</li>
-              </ul>
-            </article>
-
-            <article class="card" aria-labelledby="tools-title">
-              <h3 id="tools-title">Tools</h3>
-              <ul class="list">
-                <li>VS Code &amp; Cursor</li>
-                <li>Browser DevTools</li>
-                <li>Docker</li>
-                <li>Postman &amp; Swagger / OpenAPI</li>
-                <li>Playwright</li>
-                <li>GitHub Actions</li>
-                <li>Stripe</li>
-                <li>Vercel</li>
-                <li>Railway &amp; Render</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="projects" class="section" aria-labelledby="projects-title">
         <div class="container">
-          <h2 id="projects-title">Projects</h2>
+          <h2 id="projects-title" class="reveal">Projects</h2>
           <div class="projects-grid">
-            <article class="project-card">
+            <article class="project-card reveal">
               <div
                 class="project-card__media project-card__media--family"
                 data-carousel
@@ -152,7 +119,7 @@
                         alt="FamilyFlow kid mode activity planning UI"
                         width="1280"
                         height="720"
-                        loading="lazy"
+                        loading="eager"
                       />
                     </div>
                     <div class="carousel__slide" aria-hidden="true">
@@ -197,19 +164,51 @@
                   >
                     ›
                   </button>
-                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
-                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 4" tabindex="-1"></button>
+                  <div
+                    class="carousel__dots"
+                    role="tablist"
+                    aria-label="Choose screenshot"
+                  >
+                    <button
+                      type="button"
+                      class="carousel__dot is-active"
+                      role="tab"
+                      aria-selected="true"
+                      aria-label="Screenshot 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 2"
+                      tabindex="-1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 3"
+                      tabindex="-1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 4"
+                      tabindex="-1"
+                    ></button>
                   </div>
                 </div>
               </div>
               <div class="project-card__body">
                 <h3>FamilyFlow</h3>
                 <p>
-                  Parents set constraints; kids pick energy and style; AI suggests
-                  activities with timers and feedback for real family life.
+                  Parents set constraints; kids pick energy and style; AI
+                  suggests activities with timers and feedback for real family
+                  life.
                 </p>
                 <ul class="meta">
                   <li>React · Vite · Express · OpenAI</li>
@@ -234,7 +233,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card reveal">
               <div
                 class="project-card__media project-card__media--houseiq"
                 data-carousel
@@ -250,7 +249,7 @@
                         alt="HouseIQ chat assistant for home issues"
                         width="1280"
                         height="720"
-                        loading="lazy"
+                        loading="eager"
                       />
                     </div>
                     <div class="carousel__slide" aria-hidden="true">
@@ -286,10 +285,34 @@
                   >
                     ›
                   </button>
-                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
-                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  <div
+                    class="carousel__dots"
+                    role="tablist"
+                    aria-label="Choose screenshot"
+                  >
+                    <button
+                      type="button"
+                      class="carousel__dot is-active"
+                      role="tab"
+                      aria-selected="true"
+                      aria-label="Screenshot 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 2"
+                      tabindex="-1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 3"
+                      tabindex="-1"
+                    ></button>
                   </div>
                 </div>
               </div>
@@ -311,11 +334,12 @@
                     rel="noopener noreferrer"
                     >Code</a
                   >
+                  <a class="text-link" href="#contact">Demo on request</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card reveal">
               <div
                 class="project-card__media project-card__media--medbridge"
                 data-carousel
@@ -327,26 +351,26 @@
                   <div class="carousel__viewport">
                     <div class="carousel__slide is-active">
                       <img
-                        src="assets/projects/medbridge/01-dashboard.webp"
-                        alt="MedBridge dashboard calendar UI"
-                        width="1280"
-                        height="720"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="carousel__slide" aria-hidden="true">
-                      <img
                         src="assets/projects/medbridge/02-vault.webp"
                         alt="MedBridge document vault upload UI"
                         width="1280"
                         height="720"
-                        loading="lazy"
+                        loading="eager"
                       />
                     </div>
                     <div class="carousel__slide" aria-hidden="true">
                       <img
                         src="assets/projects/medbridge/03-history.webp"
                         alt="MedBridge medical history documents UI"
+                        width="1280"
+                        height="720"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="carousel__slide" aria-hidden="true">
+                      <img
+                        src="assets/projects/medbridge/01-dashboard.webp"
+                        alt="MedBridge dashboard calendar UI"
                         width="1280"
                         height="720"
                         loading="lazy"
@@ -367,18 +391,43 @@
                   >
                     ›
                   </button>
-                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
-                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  <div
+                    class="carousel__dots"
+                    role="tablist"
+                    aria-label="Choose screenshot"
+                  >
+                    <button
+                      type="button"
+                      class="carousel__dot is-active"
+                      role="tab"
+                      aria-selected="true"
+                      aria-label="Screenshot 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 2"
+                      tabindex="-1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 3"
+                      tabindex="-1"
+                    ></button>
                   </div>
                 </div>
               </div>
               <div class="project-card__body">
                 <h3>MedBridge</h3>
                 <p>
-                  Team residency AI patient companion — plain-language summaries,
-                  chat, and care tools. I focused on the FastAPI backend.
+                  Team residency AI patient companion — plain-language
+                  summaries, chat, and care tools. I focused on the FastAPI
+                  backend.
                 </p>
                 <ul class="meta">
                   <li>FastAPI · Groq · React · Supabase</li>
@@ -403,7 +452,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card reveal">
               <div
                 class="project-card__media project-card__media--garden"
                 data-carousel
@@ -419,7 +468,7 @@
                         alt="NurseryConnect homepage"
                         width="1280"
                         height="720"
-                        loading="lazy"
+                        loading="eager"
                       />
                     </div>
                     <div class="carousel__slide" aria-hidden="true">
@@ -455,10 +504,34 @@
                   >
                     ›
                   </button>
-                  <div class="carousel__dots" role="tablist" aria-label="Choose screenshot">
-                    <button type="button" class="carousel__dot is-active" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 2" tabindex="-1"></button>
-                    <button type="button" class="carousel__dot" role="tab" aria-selected="false" aria-label="Screenshot 3" tabindex="-1"></button>
+                  <div
+                    class="carousel__dots"
+                    role="tablist"
+                    aria-label="Choose screenshot"
+                  >
+                    <button
+                      type="button"
+                      class="carousel__dot is-active"
+                      role="tab"
+                      aria-selected="true"
+                      aria-label="Screenshot 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 2"
+                      tabindex="-1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="carousel__dot"
+                      role="tab"
+                      aria-selected="false"
+                      aria-label="Screenshot 3"
+                      tabindex="-1"
+                    ></button>
                   </div>
                 </div>
               </div>
@@ -481,6 +554,7 @@
                     rel="noopener noreferrer"
                     >Code</a
                   >
+                  <a class="text-link" href="#contact">Demo on request</a>
                 </div>
               </div>
             </article>
@@ -488,55 +562,165 @@
         </div>
       </section>
 
-      <section id="values" class="section" aria-labelledby="values-title">
-        <div class="container">
-          <h2 id="values-title">Values</h2>
-          <p>
-            My work is rooted in human rights, community, and mutual aid. I care
-            about accessibility — both digital and physical — and I believe that
-            good design should empower everyone, regardless of ability or
-            background.
-          </p>
-          <p>
-            I’m guided by curiosity, empathy, and the belief that small creative
-            acts can ripple outward to make the world fairer and more joyful.
-            Whether in code, conversation, or collaboration, I try to bring a
-            sense of inclusion and wonder to everything I do.
-          </p>
-          <ul class="pill-list" role="list">
-            <li class="pill">Accessibility</li>
-            <li class="pill">Community</li>
-            <li class="pill">Mutual Aid</li>
-            <li class="pill">Curiosity</li>
-            <li class="pill">Sustainability</li>
-            <li class="pill">Empathy</li>
-          </ul>
+      <section id="story" class="section section--story" aria-labelledby="story-title">
+        <div class="container story">
+          <div class="story__media reveal">
+            <img
+              src="assets/projects/familyflow/01-kid.webp"
+              alt="FamilyFlow kid mode — choosing energy and activity style"
+              width="1280"
+              height="720"
+              loading="lazy"
+            />
+          </div>
+          <div class="story__body reveal">
+            <p class="story__eyebrow">A closer look</p>
+            <h2 id="story-title">How I build: FamilyFlow</h2>
+            <p>
+              <strong>The problem.</strong> Parents need a quiet window to
+              cook, rest, or reset — and kids need something to do that fits the
+              house right now: noise, mess, time, and whether an adult can help.
+            </p>
+            <p>
+              <strong>Who it’s for.</strong> Real households, not idealized
+              ones. Parent mode sets hard constraints; kid mode asks for energy
+              and style in plain language so children can steer without fighting
+              the rules.
+            </p>
+            <p>
+              <strong>Decisions that mattered.</strong> Separate parent and kid
+              modes so power and play don’t collide. Constraints as the source
+              of truth before any AI suggestion. Timers and feedback so the
+              activity lives in the room, not only in a chat reply.
+            </p>
+            <p>
+              <strong>Next.</strong> Richer profiles over time, better
+              accessibility in kid mode, and suggestions that learn what
+              actually worked for each family.
+            </p>
+            <p class="story__cta">
+              <a
+                class="btn btn--sm"
+                href="https://family-activity-helper-production.up.railway.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Try FamilyFlow</a
+              >
+              <a class="text-link" href="#projects">Back to projects</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        About photo: replace assets/about/portrait-or-trail.svg with your
+        own photo as portrait-or-trail.jpg (or .webp) and update the src below.
+      -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container about">
+          <div class="about__copy reveal">
+            <h2 id="about-title">About</h2>
+            <p>
+              I’m a hands-on, visual learner who spends as much time outdoors as
+              I do at a keyboard. Curiosity on the trail and in the workshop
+              looks the same to me — notice what’s real, respect the people
+              around you, and build something kinder than what was there before.
+            </p>
+            <p>
+              I believe technology should serve everyone. My work mixes
+              practical tinkering with empathy: full-stack tools that help
+              people navigate family life, home care, and health with more
+              clarity. I’m rooted in community, mutual aid, and accessibility —
+              digital and physical — and I try to bring inclusion and wonder
+              into code, conversation, and collaboration.
+            </p>
+            <p class="about__stack">
+              React · TypeScript · Next.js · Node · FastAPI · Postgres ·
+              Supabase · accessible UI
+            </p>
+          </div>
+          <figure class="about__figure reveal">
+            <img
+              src="assets/about/portrait-or-trail.svg"
+              alt="Placeholder for a trail or portrait photo of Kyle"
+              width="960"
+              height="1200"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </section>
 
       <section id="contact" class="section" aria-labelledby="contact-title">
         <div class="container">
-          <h2 id="contact-title">Contact</h2>
+          <h2 id="contact-title" class="reveal">Contact</h2>
+          <p class="form-help reveal">
+            Get in touch — I’d love to hear from you.
+          </p>
+
+          <ul class="contact-links reveal" role="list">
+            <li>
+              <a href="mailto:kyle.babington.dev@gmail.com">Email</a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kyle-babington"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/kylebabington"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a href="assets/resume.pdf">Resume</a>
+            </li>
+          </ul>
+
           <form
-            class="contact-form"
+            class="contact-form reveal"
             action="https://formspree.io/f/xzdnjzej"
             method="POST"
             aria-describedby="contact-help"
+            novalidate
           >
-            <p id="contact-help" class="form-help">
-              Get in touch — I’d love to hear from you.
+            <p id="contact-help" class="visually-hidden">
+              Send a message with your name, email, and a short note.
             </p>
             <label class="form-field">
               <span>Name</span>
-              <input type="text" name="name" autocomplete="name" required />
+              <input
+                type="text"
+                name="name"
+                id="contact-name"
+                autocomplete="name"
+                required
+              />
             </label>
             <label class="form-field">
               <span>Email</span>
-              <input type="email" name="email" autocomplete="email" required />
+              <input
+                type="email"
+                name="email"
+                id="contact-email"
+                autocomplete="email"
+                required
+              />
             </label>
             <label class="form-field">
               <span>Message</span>
-              <textarea name="message" rows="5" required></textarea>
+              <textarea
+                name="message"
+                id="contact-message"
+                rows="5"
+                required
+              ></textarea>
             </label>
             <button class="btn" type="submit">Send</button>
           </form>
