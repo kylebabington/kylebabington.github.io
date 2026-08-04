@@ -7,6 +7,25 @@ const prefersReducedMotion = window.matchMedia(
 const isStatsPage = document.body.dataset.page === 'stats';
 const homePrefix = isStatsPage ? '../' : '';
 
+(function syncHeaderOffset() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  function apply() {
+    const height = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty(
+      '--header-offset',
+      `${height}px`
+    );
+  }
+
+  apply();
+  window.addEventListener('resize', apply);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(apply).observe(header);
+  }
+})();
+
 // Update copyright year dynamically
 (function updateYear() {
   const yearElement = document.getElementById('year');
@@ -25,7 +44,12 @@ const homePrefix = isStatsPage ? '../' : '';
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const headerOffset = 80;
+        const headerOffset =
+          parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue(
+              '--header-offset'
+            )
+          ) || 80;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition =
           elementPosition + window.pageYOffset - headerOffset;
