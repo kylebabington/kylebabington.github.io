@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyle Babington · Stats</title>
+  <meta name="description" content="Live public GitHub stats and activity for Kyle Babington." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Raleway:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/personalPortfolio.css" />
+  <link rel="stylesheet" href="css/reference-inspired.css" />
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/stats.js" defer></script>
+</head>
+<body class="stats-body">
+  <a class="skip-link" href="#stats-main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navBar" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">◆</span><span class="brand__text">Kyle Babington</span></a>
+      <div class="dashboard-controls">
+        <button class="command-trigger" type="button" data-command-trigger aria-label="Open command menu">Search <kbd>Ctrl K</kbd></button>
+        <div class="dashboard-clock" aria-label="Local time in Indianapolis"><span class="dashboard-clock__dot" aria-hidden="true"></span><span data-live-clock>--:--:--</span></div>
+        <button class="dashboard-icon-btn" type="button" data-theme-toggle aria-label="Switch theme">☀</button>
+        <a class="dashboard-icon-btn" href="https://github.com/kylebabington" target="_blank" rel="noopener noreferrer" aria-label="GitHub">↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="stats-shell">
+    <aside class="stats-sidebar" aria-label="Portfolio sections">
+      <div class="stats-sidebar__title">Sections</div>
+      <a href="index.html">Introduction</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills &amp; tools</a>
+      <a href="index.html#about">About me</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="stats.html" aria-current="page">Stats</a>
+    </aside>
+
+    <main id="stats-main" class="stats-main" tabindex="-1">
+      <header class="stats-header">
+        <p class="stats-eyebrow">Developer dashboard</p>
+        <h1>GitHub Stats</h1>
+        <p>Public activity and profile metrics from GitHub, presented in the compact dashboard style that inspired this redesign.</p>
+        <p id="stats-status" class="stats-status">Loading live public GitHub data…</p>
+      </header>
+
+      <section class="stats-section" aria-labelledby="overview-title">
+        <div class="stats-section__head">
+          <h2 id="overview-title">Profile overview</h2>
+          <p>High-level signals from my public GitHub profile.</p>
+        </div>
+        <div class="stats-grid stats-grid--3">
+          <article class="stats-card stats-card--accent"><p class="stats-card__label">Public repositories</p><span id="public-repos" class="stats-card__value">—</span><p class="stats-card__detail">Projects, experiments, and coursework.</p></article>
+          <article class="stats-card"><p class="stats-card__label">Followers</p><span id="followers" class="stats-card__value">—</span><p class="stats-card__detail">People following my public work.</p></article>
+          <article class="stats-card"><p class="stats-card__label">Following</p><span id="following" class="stats-card__value">—</span><p class="stats-card__detail">Developers and projects I follow.</p></article>
+          <article class="stats-card"><p class="stats-card__label">Location</p><span id="location" class="stats-card__value" style="font-size:clamp(1.5rem,4vw,2.25rem)">—</span><p class="stats-card__detail">Based in Indianapolis, Indiana.</p></article>
+          <article class="stats-card"><p class="stats-card__label">GitHub since</p><span id="github-created" class="stats-card__value">—</span><p class="stats-card__detail">Year this public profile was created.</p></article>
+          <article class="stats-card"><p class="stats-card__label">Latest public push</p><span id="recent-push" class="stats-card__value" style="font-size:clamp(1.4rem,3vw,2rem)">—</span><p class="stats-card__detail">Most recently pushed public repository.</p></article>
+        </div>
+      </section>
+
+      <section class="stats-section" aria-labelledby="contrib-title">
+        <div class="stats-section__head">
+          <h2 id="contrib-title">Contribution activity</h2>
+          <p>A visual snapshot of GitHub contributions.</p>
+        </div>
+        <div class="stats-card stats-calendar">
+          <a href="https://github.com/kylebabington" target="_blank" rel="noopener noreferrer">
+            <img src="https://ghchart.rshah.org/2a9d8f/kylebabington" alt="GitHub contribution chart for Kyle Babington" loading="lazy" />
+          </a>
+        </div>
+      </section>
+
+      <section class="stats-section" aria-labelledby="language-title">
+        <div class="stats-section__head">
+          <h2 id="language-title">Languages across public repositories</h2>
+          <p>Calculated client-side from the primary language GitHub reports for each non-fork public repository.</p>
+        </div>
+        <div class="stats-card"><div id="language-bars" class="language-bars"><p class="stats-status">Loading languages…</p></div></div>
+      </section>
+
+      <section class="stats-section" aria-labelledby="repos-title">
+        <div class="stats-section__head">
+          <h2 id="repos-title">Recently active repositories</h2>
+          <p>Recent public work, ordered by push date.</p>
+        </div>
+        <div class="stats-card"><div id="repo-list" class="repo-list"><p class="stats-status">Loading repositories…</p></div></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer"><div class="container site-footer__inner"><p>© <span data-year>2026</span> Kyle Babington</p><p class="site-footer__links"><a href="index.html">Back to portfolio</a></p></div></footer>
+
+  <div class="command-palette" data-command-palette hidden>
+    <div class="command-panel" role="dialog" aria-modal="true" aria-label="Quick navigation">
+      <input class="command-search" data-command-search type="search" placeholder="Search pages and sections…" aria-label="Search commands" />
+      <ul class="command-list">
+        <li class="command-item" data-keywords="home introduction portfolio"><a href="index.html"><span>Introduction</span><small>Home</small></a></li>
+        <li class="command-item" data-keywords="projects apps work familyflow houseiq medbridge nursery"><a href="index.html#projects"><span>Projects</span><small>Portfolio</small></a></li>
+        <li class="command-item" data-keywords="skills tools technologies"><a href="index.html#skills"><span>Skills &amp; tools</span><small>Stack</small></a></li>
+        <li class="command-item" data-keywords="contact email hire"><a href="index.html#contact"><span>Contact</span><small>Get in touch</small></a></li>
+        <li class="command-item" data-keywords="stats github metrics repositories activity"><a href="stats.html"><span>GitHub Stats</span><small>Current page</small></a></li>
+        <li class="command-item" data-keywords="github profile source"><a href="https://github.com/kylebabington" target="_blank" rel="noopener noreferrer"><span>GitHub Profile</span><small>External ↗</small></a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
