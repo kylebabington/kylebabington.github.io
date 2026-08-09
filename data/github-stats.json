@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T14:21:13.794Z",
+  "generatedAt": "2026-08-09T14:22:47.637Z",
   "login": "kylebabington",
   "publicRepos": 10,
   "followers": 1,
@@ -9,45 +9,6 @@
   "featuredProjects": 4,
   "totalContributions": 717,
   "contributionWeeks": [
-    {
-      "days": [
-        {
-          "date": "2025-08-03",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-04",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-05",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-06",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-07",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-08",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-09",
-          "count": 0,
-          "level": 0
-        }
-      ]
-    },
     {
       "days": [
         {
@@ -2075,23 +2036,32 @@
           "level": 0
         }
       ]
+    },
+    {
+      "days": [
+        {
+          "date": "2026-08-09",
+          "count": 0,
+          "level": 0
+        }
+      ]
     }
   ],
   "recentRepos": [
+    {
+      "name": "kylebabington.github.io",
+      "description": null,
+      "language": "JavaScript",
+      "url": "https://github.com/kylebabington/kylebabington.github.io",
+      "updatedAt": "2026-08-08T14:21:18Z",
+      "stars": 0
+    },
     {
       "name": "family-activity-helper",
       "description": null,
       "language": "JavaScript",
       "url": "https://github.com/kylebabington/family-activity-helper",
       "updatedAt": "2026-08-07T23:16:29Z",
-      "stars": 0
-    },
-    {
-      "name": "kylebabington.github.io",
-      "description": null,
-      "language": "JavaScript",
-      "url": "https://github.com/kylebabington/kylebabington.github.io",
-      "updatedAt": "2026-08-07T14:46:47Z",
       "stars": 0
     },
     {
