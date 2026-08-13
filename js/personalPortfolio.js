@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 'story',
       label: 'How I build',
-      keywords: 'familyflow case study',
+      keywords: 'activcue familyflow case study',
       href: `${homePrefix}#story`,
     },
     {
@@ -599,9 +599,9 @@ document.addEventListener('DOMContentLoaded', () => {
       href: isStatsPage ? './' : 'stats/',
     },
     {
-      id: 'familyflow',
-      label: 'View FamilyFlow',
-      keywords: 'project',
+      id: 'activcue',
+      label: 'View ActivCue',
+      keywords: 'project familyflow',
       href: `${homePrefix}#projects`,
     },
     {

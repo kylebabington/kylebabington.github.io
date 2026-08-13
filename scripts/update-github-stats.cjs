@@ -73,7 +73,7 @@ async function main() {
     followers: user.followers,
     following: user.following,
     location: 'Indianapolis',
-    currentFocus: 'FamilyFlow',
+    currentFocus: 'ActivCue',
     featuredProjects: 4,
     totalContributions: calendar.totalContributions,
     contributionWeeks: calendar.weeks.map((w) => ({
