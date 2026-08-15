@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T14:43:33.855Z",
+  "generatedAt": "2026-08-15T14:10:25.221Z",
   "login": "kylebabington",
   "publicRepos": 10,
   "followers": 1,
@@ -7,7 +7,7 @@
   "location": "Indianapolis",
   "currentFocus": "ActivCue",
   "featuredProjects": 4,
-  "totalContributions": 776,
+  "totalContributions": 794,
   "contributionWeeks": [
     {
       "days": [
@@ -2017,7 +2017,7 @@
         },
         {
           "date": "2026-08-05",
-          "count": 33,
+          "count": 41,
           "level": 4
         },
         {
@@ -2066,19 +2066,32 @@
         },
         {
           "date": "2026-08-14",
-          "count": 2,
-          "level": 1
+          "count": 8,
+          "level": 3
+        },
+        {
+          "date": "2026-08-15",
+          "count": 4,
+          "level": 2
         }
       ]
     }
   ],
   "recentRepos": [
     {
-      "name": "family-activity-helper",
+      "name": "HouseIQ",
       "description": null,
       "language": "JavaScript",
-      "url": "https://github.com/kylebabington/family-activity-helper",
-      "updatedAt": "2026-08-14T14:34:11Z",
+      "url": "https://github.com/kylebabington/HouseIQ",
+      "updatedAt": "2026-08-15T05:43:45Z",
+      "stars": 0
+    },
+    {
+      "name": "activcue",
+      "description": "ActivCue — the right activity for right now. Quick family activity ideas for busy parents.",
+      "language": "JavaScript",
+      "url": "https://github.com/kylebabington/activcue",
+      "updatedAt": "2026-08-14T23:13:35Z",
       "stars": 0
     },
     {
@@ -2086,7 +2099,7 @@
       "description": null,
       "language": "JavaScript",
       "url": "https://github.com/kylebabington/kylebabington.github.io",
-      "updatedAt": "2026-08-13T21:52:06Z",
+      "updatedAt": "2026-08-14T14:44:14Z",
       "stars": 0
     },
     {
@@ -2095,14 +2108,6 @@
       "language": "TypeScript",
       "url": "https://github.com/kylebabington/mock-garden-center",
       "updatedAt": "2026-08-05T03:59:39Z",
-      "stars": 0
-    },
-    {
-      "name": "HouseIQ",
-      "description": null,
-      "language": "JavaScript",
-      "url": "https://github.com/kylebabington/HouseIQ",
-      "updatedAt": "2026-08-04T18:18:18Z",
       "stars": 0
     },
     {
