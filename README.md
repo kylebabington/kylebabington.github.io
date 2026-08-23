@@ -25,7 +25,7 @@ Drop your real assets and update the matching links in `index.html`:
 | --- | --- |
 | Hero wilderness photo | `assets/about/hero-wilderness.jpg` (set — LinkedIn banner) |
 | About / portrait | `assets/about/portrait-or-trail.jpg` (set) |
-| Open Graph share image | `assets/og-image.svg` → optional `assets/og-image.jpg` and update meta tags |
+| Open Graph share image | `assets/og-image.png` (1200×630) |
 | Email | `mailto:kyle.babington.dev@gmail.com` (set) |
 | LinkedIn | `https://www.linkedin.com/in/kyle-babington` (set) |
 | Resume | `assets/resume.pdf` (set) |
