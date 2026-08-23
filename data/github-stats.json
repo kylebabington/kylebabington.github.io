@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T14:09:20.747Z",
+  "generatedAt": "2026-08-23T14:11:41.951Z",
   "login": "kylebabington",
   "publicRepos": 10,
   "followers": 1,
@@ -9,45 +9,6 @@
   "featuredProjects": 4,
   "totalContributions": 963,
   "contributionWeeks": [
-    {
-      "days": [
-        {
-          "date": "2025-08-17",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-18",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-19",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-20",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-21",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-22",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-08-23",
-          "count": 0,
-          "level": 0
-        }
-      ]
-    },
     {
       "days": [
         {
@@ -2075,23 +2036,32 @@
           "level": 0
         }
       ]
+    },
+    {
+      "days": [
+        {
+          "date": "2026-08-23",
+          "count": 0,
+          "level": 0
+        }
+      ]
     }
   ],
   "recentRepos": [
+    {
+      "name": "kylebabington.github.io",
+      "description": null,
+      "language": "JavaScript",
+      "url": "https://github.com/kylebabington/kylebabington.github.io",
+      "updatedAt": "2026-08-22T14:10:24Z",
+      "stars": 0
+    },
     {
       "name": "activcue",
       "description": "ActivCue — the right activity for right now. Quick family activity ideas for busy parents.",
       "language": "JavaScript",
       "url": "https://github.com/kylebabington/activcue",
       "updatedAt": "2026-08-21T18:50:55Z",
-      "stars": 0
-    },
-    {
-      "name": "kylebabington.github.io",
-      "description": null,
-      "language": "JavaScript",
-      "url": "https://github.com/kylebabington/kylebabington.github.io",
-      "updatedAt": "2026-08-21T14:30:13Z",
       "stars": 0
     },
     {
