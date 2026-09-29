@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T20:17:33.966Z",
+  "generatedAt": "2026-09-29T18:56:54.976Z",
   "login": "kylebabington",
   "publicRepos": 12,
   "followers": 1,
@@ -2048,11 +2048,24 @@
           "date": "2026-09-28",
           "count": 0,
           "level": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0,
+          "level": 0
         }
       ]
     }
   ],
   "recentRepos": [
+    {
+      "name": "kylebabington.github.io",
+      "description": null,
+      "language": "JavaScript",
+      "url": "https://github.com/kylebabington/kylebabington.github.io",
+      "updatedAt": "2026-09-28T20:17:40Z",
+      "stars": 0
+    },
     {
       "name": "kalshi-edge-lab",
       "description": null,
@@ -2067,14 +2080,6 @@
       "language": "JavaScript",
       "url": "https://github.com/kylebabington/local-ai-lab",
       "updatedAt": "2026-09-27T18:19:30Z",
-      "stars": 0
-    },
-    {
-      "name": "kylebabington.github.io",
-      "description": null,
-      "language": "JavaScript",
-      "url": "https://github.com/kylebabington/kylebabington.github.io",
-      "updatedAt": "2026-09-27T17:57:47Z",
       "stars": 0
     },
     {
