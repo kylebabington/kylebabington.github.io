@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-06T19:10:00.515Z",
+  "generatedAt": "2026-10-07T19:37:06.386Z",
   "login": "kylebabington",
-  "publicRepos": 12,
+  "publicRepos": 13,
   "followers": 1,
   "following": 0,
   "location": "Indianapolis",
   "currentFocus": "ActivCue",
   "featuredProjects": 4,
-  "totalContributions": 1048,
+  "totalContributions": 1052,
   "contributionWeeks": [
     {
       "days": [
@@ -2053,17 +2053,22 @@
           "date": "2026-10-06",
           "count": 1,
           "level": 1
+        },
+        {
+          "date": "2026-10-07",
+          "count": 4,
+          "level": 2
         }
       ]
     }
   ],
   "recentRepos": [
     {
-      "name": "kalshi-edge-lab",
+      "name": "landscaping-website",
       "description": null,
-      "language": "Python",
-      "url": "https://github.com/kylebabington/kalshi-edge-lab",
-      "updatedAt": "2026-10-06T11:59:37Z",
+      "language": "TypeScript",
+      "url": "https://github.com/kylebabington/landscaping-website",
+      "updatedAt": "2026-10-07T16:46:53Z",
       "stars": 0
     },
     {
@@ -2071,7 +2076,15 @@
       "description": null,
       "language": "JavaScript",
       "url": "https://github.com/kylebabington/kylebabington.github.io",
-      "updatedAt": "2026-10-05T21:21:07Z",
+      "updatedAt": "2026-10-06T19:10:05Z",
+      "stars": 0
+    },
+    {
+      "name": "kalshi-edge-lab",
+      "description": null,
+      "language": "Python",
+      "url": "https://github.com/kylebabington/kalshi-edge-lab",
+      "updatedAt": "2026-10-06T11:59:37Z",
       "stars": 0
     },
     {
@@ -2128,14 +2141,6 @@
       "language": "Python",
       "url": "https://github.com/kylebabington/ObjectOrientedPythonPractice",
       "updatedAt": "2026-05-29T23:13:22Z",
-      "stars": 0
-    },
-    {
-      "name": "RickMorty",
-      "description": null,
-      "language": "JavaScript",
-      "url": "https://github.com/kylebabington/RickMorty",
-      "updatedAt": "2026-02-23T16:42:11Z",
       "stars": 0
     }
   ]
