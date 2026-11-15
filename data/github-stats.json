@@ -1,53 +1,14 @@
 {
-  "generatedAt": "2026-11-14T18:53:05.740Z",
+  "generatedAt": "2026-11-15T19:28:59.912Z",
   "login": "kylebabington",
-  "publicRepos": 13,
+  "publicRepos": 14,
   "followers": 1,
   "following": 0,
   "location": "Indianapolis",
   "currentFocus": "ActivCue",
   "featuredProjects": 4,
-  "totalContributions": 1092,
+  "totalContributions": 1095,
   "contributionWeeks": [
-    {
-      "days": [
-        {
-          "date": "2025-11-09",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-10",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-11",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-12",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-13",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-14",
-          "count": 0,
-          "level": 0
-        },
-        {
-          "date": "2025-11-15",
-          "count": 0,
-          "level": 0
-        }
-      ]
-    },
     {
       "days": [
         {
@@ -2075,9 +2036,26 @@
           "level": 0
         }
       ]
+    },
+    {
+      "days": [
+        {
+          "date": "2026-11-15",
+          "count": 3,
+          "level": 2
+        }
+      ]
     }
   ],
   "recentRepos": [
+    {
+      "name": "RedHandedTheGame",
+      "description": null,
+      "language": "TypeScript",
+      "url": "https://github.com/kylebabington/RedHandedTheGame",
+      "updatedAt": "2026-11-15T13:37:42Z",
+      "stars": 0
+    },
     {
       "name": "local-ai-lab",
       "description": "A beginner-friendly local Ollama assistant with chat, project RAG, and approval-gated computer tools.",
@@ -2148,14 +2126,6 @@
       "language": "TypeScript",
       "url": "https://github.com/kylebabington/TimeBlocker",
       "updatedAt": "2026-05-29T23:17:26Z",
-      "stars": 0
-    },
-    {
-      "name": "ObjectOrientedPythonPractice",
-      "description": null,
-      "language": "Python",
-      "url": "https://github.com/kylebabington/ObjectOrientedPythonPractice",
-      "updatedAt": "2026-05-29T23:13:22Z",
       "stars": 0
     }
   ]
